@@ -1,29 +1,28 @@
-# Gradient Descent Visualization & Experiment
+# Gradient Descent Experiment: Visualization and Analysis of Optimization Dynamics
 
-This notebook implements and visualizes Gradient Descent optimization across multiple settings. I experiment with learning rates, convergence behavior, and loss landscapes for convex functions. The aim is to understand the algorithmic behavior of first-order optimization at a fundamental level.
+## Overview
+This project is an in-depth exploration of gradient descent, a foundational optimization algorithm. I implemented and visualized the gradient descent process on convex functions, focusing on how hyperparameters—especially the learning rate—affect convergence. The work is both theoretical and experimental, revealing the delicate interplay between optimization dynamics and algorithmic performance.
 
-## 🧠 Objectives
+## Mathematical Framework
+For a differentiable function \(f(\theta)\), gradient descent updates the parameters as:
+\[
+\theta^{(t+1)} = \theta^{(t)} - \alpha \nabla f(\theta^{(t)}),
+\]
+where \(\alpha\) is the learning rate. I particularly focused on quadratic functions:
+\[
+f(\theta) = \frac{1}{2}\theta^T A \theta - b^T \theta,
+\]
+which offer an analytical gradient \(\nabla f(\theta) = A \theta - b\). This setup provided a clear mathematical foundation to study convergence behavior.
 
-- Implement vanilla gradient descent from scratch.
-- Tune hyperparameters such as step size (`alpha`) and convergence thresholds.
-- Visualize convergence paths on 2D loss surfaces.
-- Observe divergence and oscillation at extreme learning rates.
+## Implementation & Experimentation
+- **Algorithm Implementation:** I developed the gradient descent algorithm from scratch in Python.
+- **Visualization:** I plotted loss curves, parameter trajectories, and vector fields to illustrate the optimization process.
+- **Parameter Tuning:** Various learning rates were tested, revealing critical trade-offs between convergence speed and stability.
+- **Analysis:** The experiments highlight the importance of step-size selection and how it influences the descent path in high-dimensional spaces.
 
-## 🧪 Methods
+## Usage
+- **Prerequisites:** Python, NumPy, Matplotlib.
+- **Run the Notebook:** Open `Gradient_Descent_Experiment.ipynb` in your preferred environment.
+- **Customization:** Experiment with different convex functions and learning rate schedules to further understand optimization dynamics.
 
-- Defined a quadratic convex function as the optimization target.
-- Tracked function value and parameter updates at each iteration.
-- Plotted loss vs iteration and vector field trajectories.
-- Compared convergence under various learning rate schedules.
-
-## 🔍 Key Takeaways
-
-- Learning rate choice is critical — too large leads to instability or divergence.
-- Small learning rates converge reliably but very slowly.
-- Visualizing vector fields and loss over time builds deep understanding of descent dynamics.
-
-## 🚀 Technologies
-
-- Python
-- NumPy
-- Matplotlib
+---
